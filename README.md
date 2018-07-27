@@ -46,6 +46,8 @@ In order to run this program you will need the following:
   
  2. Execute 'python news_tool.py' in the command line.
  
+ 3. Enjoy!
+ 
 ## Example of the program's output
 
 I will provide the file program_output_example.txt that is a copy of what the program will print out.
