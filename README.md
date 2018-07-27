@@ -5,17 +5,22 @@ It will answer 3 questions:
   2. Who are the most popular article authors of all time?
   3. On which days did more than 1% of requests lead to errors?
 ## Requirements
-You'll need:
-1. Database software (provided by 
-a Linux virtual machine)
-2. Data to analyze, newsdata.sql file. The database includes three tables:
+In order to run this program you will need the following:
+
+1. Computer (Windows or Mac OS)
+2. Python 2.7 installed
+3. psycopg2 module
+4. PostgreSQL database server
+5. Database software (provided by a Linux virtual machine)
+6. Data to analyze, newsdata.sql file. The database includes three tables:
   - The authors table includes information about the authors of articles.
   - The articles table includes the articles themselves.
   - The log table includes one entry for each time a user has accessed the site.
-3. Python 2.7
-4. psycopg2 module
+7. Working knowlage of using the command-line.
+  
 ## Instructions
-Before you start you need to create the following Views for each of the questions:
+
+1.  Use the psql command-line tool to create the following Views for each of the questions in the database:
   
   Question1:
   
@@ -39,11 +44,11 @@ Before you start you need to create the following Views for each of the question
   
   	CREATE VIEW percentage AS SELECT error100.date, (errors*1.00)/total_number AS percentage_errors FROM error100, total_entries WHERE total_entries.date=error100.date ORDER BY percentage_errors DESC;
   
- After you have created the views you can execute 'python news_tool.py' in the command line.
+ 2. Execute 'python news_tool.py' in the command line.
  
 ## Example of the program's output
 
-I will provide the file <program_output_example.txt> that is a copy of what the program will print out.
+I will provide the file program_output_example.txt that is a copy of what the program will print out.
 
 Q1. Number of article's views:
 
