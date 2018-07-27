@@ -39,19 +39,26 @@ Before you start you need to create the following Views for each of the question
   
   	CREATE VIEW percentage AS SELECT error100.date, (errors*1.00)/total_number AS percentage_errors FROM error100, total_entries WHERE total_entries.date=error100.date ORDER BY percentage_errors DESC;
   
- AFter you have created the views you can execute 'python news_tool.py' in the command line.
+ After you have created the views you can execute 'python news_tool.py' in the command line.
  
 ## Example of the program's output
 
+I will provide the file <program_output_example.txt> that is a copy of what the program will print out.
+
 Q1. Number of article's views:
+
      " Candidate is jerk, alleges rival " --  338647 views
      " Bears love berries, alleges bear " --  253801 views
      " Bad things gone, say good people " --  170098 views
+     
 Q2. Number of authors' views:
+
      " Ursula La Multa " --  507594 views
      " Rudolf von Treppenwitz " --  423457 views
      " Anonymous Contributor " --  170098 views
      " Markoff Chaney " --  84557 views
+     
 Q3. Days where more than 1% of requests lead to errors:
+
      " 2016-07-17 " --  2.2626862468027260 % errors
 
