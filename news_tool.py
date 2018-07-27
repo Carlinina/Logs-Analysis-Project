@@ -1,5 +1,5 @@
-# "New's Tool code for the news database":
-# There are seven VIEWS needed, look at the README.
+# "New's Tool code for the newspaper database":
+# There are 8 VIEWS needed, look at the README.
 
 import psycopg2
 
@@ -10,7 +10,7 @@ def get_popular_articles():
     Sorted list with the most popular article at the top."""
     db = psycopg2.connect("dbname=news")
     c = db.cursor()
-    # Look VIEW popular_path
+    # CREATE VIEW popular_path, look at the README.md file
     query = "SELECT title, count(*) AS views FROM popular_path GROUP BY title \
   ORDER BY views DESC LIMIT 3;"
     c.execute(query)
@@ -30,8 +30,8 @@ def get_popular_author():
     Sorted list with the most popular author at the top."""
     db = psycopg2.connect("dbname=news")
     c = db.cursor()
-    # Look VIEW popular_authors
-    # Look VIEW authors_views
+    # CREATE VIEW popular_authors, look at the README.md file
+    # CREATE VIEW authors_views, look at the README.md file
     query = "SELECT name, views FROM authors_views JOIN authors\
   ON authors.id=authors_views.author;"
     c.execute(query)
@@ -51,11 +51,11 @@ def get_days_error_1per():
     that the news site sent to the user's browser."""
     db = psycopg2.connect("dbname=news")
     c = db.cursor()
-    # Look VIEW date_status
-    # Look VIEW date_error
-    # Look VIEW total_entries
-    # Look VIEW error100
-    # Look VIEW percentage
+    # CREATE VIEW date_status, look at the README.md file
+    # CREATE VIEW date_error, look at the README.md file
+    # CREATE VIEW total_entries, look at the README.md file
+    # CREATE VIEW error100, look at the README.md file
+    # CREATE VIEW percentage, look at the README.md file
     query = "SELECT date, percentage_errors FROM percentage WHERE\
   percentage_errors > '1';"
     c.execute(query)
