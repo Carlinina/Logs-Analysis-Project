@@ -15,7 +15,7 @@ a Linux virtual machine)
 3. Python 2.7
 4. psycopg2 module
 ## Instructions
-Before you start you need to create the following Views for each of the questions answered:
+Before you start you need to create the following Views for each of the questions:
   
   Question1:
   
