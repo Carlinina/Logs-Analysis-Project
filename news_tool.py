@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # "New's Tool code for the newspaper database":
 # There are 8 VIEWS needed, look at the README.
 
@@ -8,7 +9,10 @@ def get_popular_articles():
     """1. What are the most popular three articles of all time? \
     Which articles have been accessed the most?\
     Sorted list with the most popular article at the top."""
-    db = psycopg2.connect("dbname=news")
+    try:
+        db = psycopg2.connect("dbname=news")
+    except:
+        print ("Unable to connect to the database")
     c = db.cursor()
     # CREATE VIEW popular_path, look at the README.md file
     query = "SELECT title, count(*) AS views FROM popular_path GROUP BY title \
@@ -28,7 +32,10 @@ def get_popular_author():
     """2. Who are the most popular article authors of all time?\
     which authors get the most page views?\
     Sorted list with the most popular author at the top."""
-    db = psycopg2.connect("dbname=news")
+    try:
+        db = psycopg2.connect("dbname=news")
+    except:
+        print ("Unable to connect to the database")
     c = db.cursor()
     # CREATE VIEW popular_authors, look at the README.md file
     # CREATE VIEW authors_views, look at the README.md file
@@ -49,7 +56,10 @@ def get_days_error_1per():
     """3. On which days did more than 1% of requests lead to errors?\
     The log table includes a column status that indicates the HTTP status code\
     that the news site sent to the user's browser."""
-    db = psycopg2.connect("dbname=news")
+    try:
+        db = psycopg2.connect("dbname=news")
+    except:
+        print ("Unable to connect to the database")
     c = db.cursor()
     # CREATE VIEW date_status, look at the README.md file
     # CREATE VIEW date_error, look at the README.md file
